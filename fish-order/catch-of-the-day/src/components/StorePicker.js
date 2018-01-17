@@ -1,6 +1,7 @@
 //need react component
 import React from 'react';
 
+
 class StorePicker extends React.Component {
 
     render() {
@@ -11,6 +12,8 @@ class StorePicker extends React.Component {
         //return only returns one element. May wrap in div
         return (
             <form className="store-selector">
+            {/* comments within jsx */}
+            {/* also don't make comment first line after return - will error */}
                 <h2>Please Enter A Store</h2>
                 <input type="text" required placeholder="Store Name" />
                 <button type="submit">Visit Store</button>

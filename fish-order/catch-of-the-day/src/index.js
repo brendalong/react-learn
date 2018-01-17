@@ -25,6 +25,9 @@ render(<StorePicker/>, document.getElementById('main'));
 // end demo 1
 
 //use relative path (don't want to look in node_modules)
+import './css/style.css';
+
 import StorePicker from './components/StorePicker';
+import './components/StorePicker-css.css';
 
 render(<StorePicker/>, document.getElementById('main'));
