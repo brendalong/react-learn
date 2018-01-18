@@ -57,19 +57,25 @@ import './css/style.css';
 import App from './components/App';
 import StorePicker from './components/StorePicker';
 import './components/StorePicker-css.css';
+import NotFound from './components/NotFound';
 
 const Root = () =>{
     return(
         <BrowserRouter>
-        {/* use Match and Miss from imprt*/}
-        {/*matches can be put anywhere is app (many levels deep even)}*/}
-        <Match exactly pattern="/" />
-        <Match pattern="/store/:storeId" component={App} />;
-        <Miss></Miss>
+        <div>
+            {/* having more than one, need to wrap in div */}
+            {/* use Match and Miss from imprt*/}
+            {/* matches can be put anywhere is app (many levels deep even)} */}
+            {/* Test this with forward slash in url and then with /store/123 */ }
+            <Match exactly pattern="/" component={StorePicker} />
+            <Match pattern="/store/:storeId" component={App} />
+            {/* number, boolean, etc must be in {}, strings in quotes */}
+            <Miss component={NotFound} />
+        </div>
         </BrowserRouter>
     )
 }
 
 render(
-    <App/>, document.getElementById('main')
+    <Root/>, document.getElementById('main')
 );
