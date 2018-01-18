@@ -36,11 +36,39 @@ render(<StorePicker/>, document.getElementById('main'));
 //end demo 2
 
 //demo 3
+/*
 import './css/style.css';
 import App from './components/App';
 import StorePicker from './components/StorePicker';
 import './components/StorePicker-css.css';
 
+
+render(
+    <App/>, document.getElementById('main')
+);
+// end demo 3
+*/
+
+//demo 4 with router
+
+//add router for pages
+import { BrowserRouter, Match, Miss} from 'react-router';
+import './css/style.css';
+import App from './components/App';
+import StorePicker from './components/StorePicker';
+import './components/StorePicker-css.css';
+
+const Root = () =>{
+    return(
+        <BrowserRouter>
+        {/* use Match and Miss from imprt*/}
+        {/*matches can be put anywhere is app (many levels deep even)}*/}
+        <Match exactly pattern="/" />
+        <Match pattern="/store/:storeId" component={App} />;
+        <Miss></Miss>
+        </BrowserRouter>
+    )
+}
 
 render(
     <App/>, document.getElementById('main')
